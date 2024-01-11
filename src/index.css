@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.weather-app-wrapper {
+    display: flex;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 0 10px #dedede;
+    margin: 30px auto;
+    background-color: #f4f4f4;
+}
+
+.current-weather-wrapper-left {
+    background-color: #ffffff;
+    border-radius: 60px 0 0 60px;
+    width: 30%;
+    padding: 50px 40px;
+}
+.current-weather-wrapper-right {
+    width: 70%;
+    border-radius: 0 60px 60px 0;
+    padding: 50px 40px;
+}
+.search-bar-wrapper {
+    display: flex;
+    gap: 10px;
+}
+.search-bar-wrapper svg {
+    height: 15px;
+    width: 15px;
+}
+.search-bar-wrapper input[type="text"] {
+    border: 0;
+    max-width: 100%;
+}
+.search-bar-wrapper input[type="text"]:focus {
+    outline: none;
+}
+.search-bar-wrapper input[type="text"]::placeholder {
+    color: #000000;
+}
+
+.current-weather-type-image svg {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .weather-app-wrapper {
+        flex-direction: column;
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+
+    .current-weather-wrapper-left,
+    .current-weather-wrapper-right {
+        border-radius: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}
+
+/** @type {import('tailwindcss').Config} */
+/* module.exports = {
+    theme: {
+      screens: {
+        'sm': '640px',
+        // => @media (min-width: 640px) { ... }
+  
+        'md': '768px',
+        // => @media (min-width: 768px) { ... }
+  
+        'lg': '1024px',
+        // => @media (min-width: 1024px) { ... }
+  
+        'xl': '1280px',
+        // => @media (min-width: 1280px) { ... }
+  
+        '2xl': '1536px',
+        // => @media (min-width: 1536px) { ... }
+      }
+    }
+  } */
