@@ -2,7 +2,7 @@ import "../index.css";
 import Sidebar from "./Sidebar";
 const Card = (props) => {
     const { weatherData } = props;
-
+    console.log(weatherData);
     return (
         <div className="weather-app-wrapper">
             <Sidebar
