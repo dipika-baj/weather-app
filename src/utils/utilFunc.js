@@ -9,5 +9,11 @@ const delay = (time = 5000) => {
     });
 };
 
+const secToDateConverter = (time, option) => {
+    let date = new Date(time * 1000);
+    return option === 'day'
+        ? date.toLocaleString('en-us', { weekday: 'long' })
+        : `${date.getHours()} : ${date.getMinutes()}`
+}
 
-export { delay };
+export { delay, secToDateConverter };

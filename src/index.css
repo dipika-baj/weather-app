@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: inter;
 }
 .weather-app-wrapper {
     display: flex;
@@ -42,10 +43,56 @@
 .search-bar-wrapper input[type="text"]::placeholder {
     color: #000000;
 }
-
+.current-weather-type-image {
+    text-align: center;
+}
 .current-weather-type-image svg {
-    height: 100%;
-    width: 100%;
+    height: 150px;
+    width: 150px;
+}
+
+.current-temperature {
+    font-size: 35px;
+}
+
+.degree {
+    font-size: 30px;
+}
+
+.current-time-day {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.current-time {
+    color: #8b8b8b;
+}
+
+.weather-type-wrapper {
+    margin: 20px 0;
+    border-top: 1px solid #eeeeee;
+    padding: 20px 0;
+    font-size: 14px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.weather-type {
+    text-transform: capitalize;
+}
+
+.current-location-wrapper {
+    padding: 40px;
+    background: url("/location.jpg") center center;
+    color: white;
+    border-radius: 12px;
+}
+/* .location-wrapper::after{
+
+} */
+.current-location {
+    font-size: 18px;
+    text-align: center;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,5 +1,6 @@
 import "../index.css";
-import { Cloud } from "lucide-react";
+import { Cloud, Cloudy } from "lucide-react";
+import { secToDateConverter } from "../utils/utilFunc";
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
 
@@ -8,11 +9,28 @@ const CurrentWeather = (props) => {
             <div className="current-weather-type-image">
                 <Cloud />
             </div>
-            <div className="current-temperature">
-                <p>
-                    {currentWeather.temp}
+            <p className="current-temperature">
+                {currentWeather.temp}
+                <span className="degree">
                     <sup>&deg;C</sup>
-                </p>
+                </span>
+            </p>
+            <div className="current-time-day">
+                <span className="current-day">
+                    {secToDateConverter(currentWeather.dt, "day")},{" "}
+                </span>
+                <span className="current-time">
+                    {secToDateConverter(currentWeather.dt, "time")}
+                </span>
+            </div>
+            <div className="weather-type-wrapper">
+                <Cloudy />
+                <div className="weather-type">
+                    {currentWeather.weather[0].description}
+                </div>
+            </div>
+            <div className="current-location-wrapper">
+                <p className="current-location">{currentTimezone}</p>
             </div>
         </div>
     );
