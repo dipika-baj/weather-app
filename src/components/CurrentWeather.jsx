@@ -17,10 +17,10 @@ const CurrentWeather = (props) => {
             </p>
             <div className="current-time-day">
                 <span className="current-day">
-                    {secToDateConverter(currentWeather.dt, "day")},{" "}
+                    {secToDateConverter(currentTimezone, "date")},{" "}
                 </span>
                 <span className="current-time">
-                    {secToDateConverter(currentWeather.dt, "time")}
+                    {secToDateConverter(currentTimezone, "time")}
                 </span>
             </div>
             <div className="weather-type-wrapper">
