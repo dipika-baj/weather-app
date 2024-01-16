@@ -1,30 +1,57 @@
 import "../index.css";
-import { Cloud, Cloudy } from "lucide-react";
+import {
+    Cloud,
+    Cloudy,
+    Sun,
+    SunMedium,
+    CloudRain,
+    CloudDrizzle,
+} from "lucide-react";
 import { secToDateConverter } from "../utils/utilFunc";
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
+    const getCurrentWeatherIcon = (weather) => {
+        switch (weather) {
+            case "clear sky":
+                return <SunMedium />;
+            case "few clouds":
+                return <Sun />;
+            case "scattered clouds":
+                return <Cloud />;
+            case "broken clouds":
+                return <Cloudy />;
+            case "shower rain":
+                return <CloudRain />;
+            case "rain":
+                return <CloudDrizzle />;
+            case "overcast clouds":
+                return <Cloudy />;
+            default:
+                return <SunMedium />;
+        }
+    };
 
     return (
         <div className="current-weather-wrapper">
             <div className="current-weather-type-image">
-                <Cloud />
+                {getCurrentWeatherIcon(currentWeather.weather[0].description)}
             </div>
             <p className="current-temperature">
-                {currentWeather.temp}
+                {Math.round(currentWeather.temp)}
                 <span className="degree">
                     <sup>&deg;C</sup>
                 </span>
             </p>
             <div className="current-time-day">
                 <span className="current-day">
-                    {secToDateConverter(currentTimezone, "date")},{" "}
+                    {secToDateConverter("", currentTimezone, "date")},
                 </span>
                 <span className="current-time">
-                    {secToDateConverter(currentTimezone, "time")}
+                    {secToDateConverter("", currentTimezone, "time")}
                 </span>
             </div>
             <div className="weather-type-wrapper">
-                <Cloudy />
+                {getCurrentWeatherIcon(currentWeather.weather[0].description)}
                 <div className="weather-type">
                     {currentWeather.weather[0].description}
                 </div>

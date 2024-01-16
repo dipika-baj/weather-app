@@ -87,14 +87,94 @@
     color: white;
     border-radius: 12px;
 }
-/* .location-wrapper::after{
-
-} */
 .current-location {
     font-size: 18px;
     text-align: center;
 }
 
+.weather-detail-wrapper {
+    width: 70%;
+    padding: 50px 40px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+.forecast-selector li {
+    padding-bottom: 2px;
+}
+.forecast-selector li span {
+    color: #848484;
+    margin-left: 5px;
+}
+.forecast-selector li.active,
+.forecast-selector li:hover {
+    cursor: pointer;
+    border-bottom: 2px solid black;
+}
+.forecast-selector li.active span,
+.forecast-selector li:hover span {
+    color: #000000;
+}
+.unit-selector li {
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.unit-selector li.active,
+.unit-selector li:hover {
+    background-color: #000000;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.user-profile {
+    width: 10%;
+}
+
+.user-profile img {
+    width: 30px;
+}
+
+.weekly-weather-wrapper {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.weekday-weather-wrapper {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.weekday-temperature span {
+    margin: 0 2px;
+}
+.weekday-min-temp {
+    color: #848484;
+}
 @media screen and (max-width: 768px) {
     .weather-app-wrapper {
         flex-direction: column;

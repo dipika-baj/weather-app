@@ -9,8 +9,10 @@ const delay = (time = 5000) => {
     });
 };
 
-const secToDateConverter = (timeZone, option) => {
-    let date = new Date();
+const secToDateConverter = (timestamp = '', timeZone, option) => {
+    let date = timestamp ? new Date(timestamp) : new Date();
+    console.log(date)
+
 
     if (option == 'date') {
         const options = { timeZone: timeZone, weekday: 'long' };
