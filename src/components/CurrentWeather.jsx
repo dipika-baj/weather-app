@@ -1,40 +1,22 @@
 import "../index.css";
-import {
-    Cloud,
-    Cloudy,
-    Sun,
-    SunMedium,
-    CloudRain,
-    CloudDrizzle,
-} from "lucide-react";
+// import {
+//     Cloud,
+//     Cloudy,
+//     Sun,
+//     SunMedium,
+//     CloudRain,
+//     CloudDrizzle,
+// } from "lucide-react";
 import { secToDateConverter } from "../utils/utilFunc";
+import CurrentWeatherIcon from "../utils/CurrentWeatherIcon";
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
-    const getCurrentWeatherIcon = (weather) => {
-        switch (weather) {
-            case "clear sky":
-                return <SunMedium />;
-            case "few clouds":
-                return <Sun />;
-            case "scattered clouds":
-                return <Cloud />;
-            case "broken clouds":
-                return <Cloudy />;
-            case "shower rain":
-                return <CloudRain />;
-            case "rain":
-                return <CloudDrizzle />;
-            case "overcast clouds":
-                return <Cloudy />;
-            default:
-                return <SunMedium />;
-        }
-    };
-
     return (
         <div className="current-weather-wrapper">
             <div className="current-weather-type-image">
-                {getCurrentWeatherIcon(currentWeather.weather[0].description)}
+                <CurrentWeatherIcon
+                    weather={currentWeather.weather[0].description}
+                />
             </div>
             <p className="current-temperature">
                 {Math.round(currentWeather.temp)}
@@ -51,7 +33,9 @@ const CurrentWeather = (props) => {
                 </span>
             </div>
             <div className="weather-type-wrapper">
-                {getCurrentWeatherIcon(currentWeather.weather[0].description)}
+                <CurrentWeatherIcon
+                    weather={currentWeather.weather[0].description}
+                />
                 <div className="weather-type">
                     {currentWeather.weather[0].description}
                 </div>

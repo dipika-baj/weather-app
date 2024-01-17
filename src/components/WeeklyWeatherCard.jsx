@@ -1,10 +1,13 @@
 import "../index.css";
+import CurrentWeatherIcon from "../utils/CurrentWeatherIcon";
 const WeeklyWeatherCard = (props) => {
     const { day, maxTemp, minTemp, weatherType } = props;
     return (
         <div className="weekday-weather-wrapper">
-            <p className="weekday-name"></p>
-            <div className="weekday-weather-image"></div>
+            <p className="weekday-name">{day}</p>
+            <div className="weekday-weather-image">
+                <CurrentWeatherIcon weather={weatherType} />
+            </div>
             <div className="weekday-temperature">
                 <span className="weekday-max-temp">
                     {Math.round(maxTemp)}

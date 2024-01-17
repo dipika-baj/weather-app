@@ -13,6 +13,7 @@ const Card = (props) => {
             <Main
                 weeklyWeather={weatherData.daily}
                 currentTimezone={weatherData.timezone}
+                currentWeather={weatherData.current}
             />
         </div>
     );

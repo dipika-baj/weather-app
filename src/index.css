@@ -28,6 +28,7 @@
 .search-bar-wrapper {
     display: flex;
     gap: 10px;
+    margin-bottom: 25px;
 }
 .search-bar-wrapper svg {
     height: 15px;
@@ -52,11 +53,11 @@
 }
 
 .current-temperature {
-    font-size: 35px;
+    font-size: 50px;
 }
 
 .degree {
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .current-time-day {
@@ -120,7 +121,6 @@
 }
 .forecast-selector li span {
     color: #848484;
-    margin-left: 5px;
 }
 .forecast-selector li.active,
 .forecast-selector li:hover {
@@ -159,7 +159,7 @@
 .weekly-weather-wrapper {
     display: flex;
     gap: 10px;
-    margin: 20px 0;
+    margin: 50px 0;
 }
 
 .weekday-weather-wrapper {
@@ -168,6 +168,9 @@
     padding: 10px;
     background-color: #ffffff;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 .weekday-temperature span {
     margin: 0 2px;
