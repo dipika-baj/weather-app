@@ -1,4 +1,3 @@
-import "../index.css";
 import UVCard from "./UVCard";
 import WindStatusCard from "./WindStatusCard";
 import SunRiseSetCard from "./SunRiseSetCard";

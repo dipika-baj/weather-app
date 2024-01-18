@@ -1,7 +1,6 @@
-import "../index.css";
 import NavBar from "./NavBar";
-import WeeklyWeather from "./WeeklyWeather";
-import TodayWeather from "./TodayWeather";
+import WeeklyWeather from "../weekly-weather/WeeklyWeather";
+import TodayWeather from "../today's-weather/TodayWeather";
 const Main = (props) => {
     const { weeklyWeather, currentTimeZone, currentWeather } = props;
     return (

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import "../index.css";
 
 const NavBar = () => {
     const [activeForcast, setActiveForcast] = useState("today");

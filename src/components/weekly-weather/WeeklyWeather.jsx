@@ -1,14 +1,11 @@
-import "../index.css";
 import WeeklyWeatherCard from "./WeeklyWeatherCard";
-import { secToDateConverter } from "../utils/utilFunc";
-import { useEffect } from "react";
 const WeeklyWeather = (props) => {
     const { weeklyWeather, timeZone } = props;
-    let weeklyWeather2 = weeklyWeather.slice();
-    weeklyWeather2.shift();
+    const formatWeeklyWeather = weeklyWeather.slice();
+    formatWeeklyWeather.shift();
     return (
         <div className="weekly-weather-wrapper">
-            {weeklyWeather2.map((weather, index) => (
+            {formatWeeklyWeather.map((weather, index) => (
                 <WeeklyWeatherCard
                     key={index}
                     day={new Intl.DateTimeFormat("en-US", {

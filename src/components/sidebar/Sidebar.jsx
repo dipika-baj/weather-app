@@ -1,4 +1,3 @@
-import "../index.css";
 import SearchBar from "./SearchBar";
 import CurrentWeather from "./CurrentWeather";
 const Sidebar = (props) => {

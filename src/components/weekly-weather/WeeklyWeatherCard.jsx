@@ -1,5 +1,4 @@
-import "../index.css";
-import CurrentWeatherIcon from "../utils/CurrentWeatherIcon";
+import CurrentWeatherIcon from "../../utils/CurrentWeatherIcon";
 const WeeklyWeatherCard = (props) => {
     const { day, maxTemp, minTemp, weatherType } = props;
     return (

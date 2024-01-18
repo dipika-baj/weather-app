@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Card from "./components/Card";
+import Card from "./components/resuable/Card";
 let count = 1;
 function App() {
     const [weatherData, setWeatherData] = useState();

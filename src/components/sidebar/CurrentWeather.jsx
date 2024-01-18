@@ -1,14 +1,5 @@
-import "../index.css";
-// import {
-//     Cloud,
-//     Cloudy,
-//     Sun,
-//     SunMedium,
-//     CloudRain,
-//     CloudDrizzle,
-// } from "lucide-react";
-import { secToDateConverter } from "../utils/utilFunc";
-import CurrentWeatherIcon from "../utils/CurrentWeatherIcon";
+import { secToDateConverter } from "../../utils/utilFunc";
+import CurrentWeatherIcon from "../../utils/CurrentWeatherIcon";
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
     return (

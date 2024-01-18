@@ -1,4 +1,3 @@
-import "../index.css";
 const WindStatusCard = (props) => {
     return <></>;
 };

@@ -1,6 +1,5 @@
-import "../index.css";
-import Sidebar from "./Sidebar";
-import Main from "./Main";
+import Sidebar from "../sidebar/Sidebar";
+import Main from "../main/Main";
 const Card = (props) => {
     const { weatherData } = props;
     console.log(weatherData);

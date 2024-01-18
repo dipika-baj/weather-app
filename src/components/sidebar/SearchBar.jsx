@@ -1,4 +1,3 @@
-import "../index.css";
 import { Search } from "lucide-react";
 const SearchBar = () => {
     return (
