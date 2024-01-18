@@ -1,10 +1,11 @@
-import Sidebar from "../sidebar/Sidebar";
-import Main from "../main/Main";
+import Sidebar from "../../sidebar/sideBar/Sidebar";
+import Main from "../../main/main/Main";
+import styles from "./card.module.css";
 const Card = (props) => {
     const { weatherData } = props;
     console.log(weatherData);
     return (
-        <div className="weather-app-wrapper">
+        <div className={styles.weather_app_wrapper}>
             <Sidebar
                 currentWeather={weatherData.current}
                 currentTimezone={weatherData.timezone}

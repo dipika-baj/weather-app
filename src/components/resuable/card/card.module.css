@@ -1,0 +1,19 @@
+.weather_app_wrapper {
+    display: flex;
+    border-radius: 60px;
+    width: 80%;
+    max-width: 1200px;
+    box-shadow: 0 0 10px #dedede;
+    margin: 30px auto;
+    background-color: #f4f4f4;
+}
+
+@media screen and (max-width: 768px) {
+    .weather_app_wrapper {
+        flex-direction: column;
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        background-color: #f4f4f4;
+    }
+}

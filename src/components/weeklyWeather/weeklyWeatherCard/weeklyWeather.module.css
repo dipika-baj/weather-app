@@ -1,0 +1,16 @@
+.weekday_weather_wrapper {
+    width: calc(100% / 7);
+    text-align: center;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.weekday_temperature span {
+    margin: 0 2px;
+}
+.weekday_min_temp {
+    color: #848484;
+}

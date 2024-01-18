@@ -1,0 +1,48 @@
+.current_weather_type_image {
+    text-align: center;
+}
+.current_weather_type_image svg {
+    height: 150px;
+    width: 150px;
+}
+
+.current_temperature {
+    font-size: 50px;
+}
+
+.degree {
+    font-size: 40px;
+}
+
+.current_time_day {
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+.current_time {
+    color: #8b8b8b;
+}
+
+.weather_type_wrapper {
+    margin: 20px 0;
+    border-top: 1px solid #eeeeee;
+    padding: 20px 0;
+    font-size: 14px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+.weather_type {
+    text-transform: capitalize;
+}
+
+.current_location_wrapper {
+    padding: 40px;
+    background: url("/location.jpg") center center;
+    color: white;
+    border-radius: 12px;
+}
+.current_location {
+    font-size: 18px;
+    text-align: center;
+}

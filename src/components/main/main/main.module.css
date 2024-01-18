@@ -1,0 +1,12 @@
+.weather_detail_wrapper {
+    width: 70%;
+    padding: 50px 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .weather_detail_wrapper {
+        border-radius: 0;
+        width: 100%;
+        padding: 20px;
+    }
+}

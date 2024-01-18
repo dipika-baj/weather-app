@@ -1,0 +1,19 @@
+.search_bar_wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+.search_bar_wrapper svg {
+    height: 15px;
+    width: 15px;
+}
+.search_bar_wrapper input[type="text"] {
+    border: 0;
+    max-width: 100%;
+}
+.search_bar_wrapper input[type="text"]:focus {
+    outline: none;
+}
+.search_bar_wrapper input[type="text"]::placeholder {
+    color: #000000;
+}

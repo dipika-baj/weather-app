@@ -1,7 +1,8 @@
 import { Search } from "lucide-react";
+import styles from "./searchBar.module.css";
 const SearchBar = () => {
     return (
-        <div className="search-bar-wrapper">
+        <div className={styles.search_bar_wrapper}>
             <label htmlFor="search">
                 <Search />
             </label>

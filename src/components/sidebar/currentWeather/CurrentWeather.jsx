@@ -1,38 +1,40 @@
-import { secToDateConverter } from "../../utils/utilFunc";
-import CurrentWeatherIcon from "../../utils/CurrentWeatherIcon";
+import { secToDateConverter } from "../../../utils/utilFunc";
+import CurrentWeatherIcon from "../../../utils/CurrentWeatherIcon";
+import styles from "./currentWeather.module.css";
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
+    console.log(currentWeather, currentTimezone);
     return (
-        <div className="current-weather-wrapper">
-            <div className="current-weather-type-image">
+        <div className={styles.current_weather_wrapper}>
+            <div className={styles.current_weather_type_image}>
                 <CurrentWeatherIcon
                     weather={currentWeather.weather[0].description}
                 />
             </div>
-            <p className="current-temperature">
+            <p className={styles.current_temperature}>
                 {Math.round(currentWeather.temp)}
-                <span className="degree">
+                <span className={styles.degree}>
                     <sup>&deg;C</sup>
                 </span>
             </p>
-            <div className="current-time-day">
-                <span className="current-day">
+            <div className={styles.current_time_day}>
+                <span className={styles.current_day}>
                     {secToDateConverter("", currentTimezone, "date")},
                 </span>
-                <span className="current-time">
+                <span className={styles.current_time}>
                     {secToDateConverter("", currentTimezone, "time")}
                 </span>
             </div>
-            <div className="weather-type-wrapper">
+            <div className={styles.weather_type_wrapper}>
                 <CurrentWeatherIcon
                     weather={currentWeather.weather[0].description}
                 />
-                <div className="weather-type">
+                <div className={styles.weather_type}>
                     {currentWeather.weather[0].description}
                 </div>
             </div>
-            <div className="current-location-wrapper">
-                <p className="current-location">{currentTimezone}</p>
+            <div className={styles.current_location_wrapper}>
+                <p className={styles.current_location}>{currentTimezone}</p>
             </div>
         </div>
     );

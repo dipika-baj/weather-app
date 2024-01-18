@@ -1,10 +1,11 @@
-import NavBar from "./NavBar";
-import WeeklyWeather from "../weekly-weather/WeeklyWeather";
-import TodayWeather from "../today's-weather/TodayWeather";
+import NavBar from "../navbar/NavBar";
+import WeeklyWeather from "../../weeklyWeather/weeklyWeather/WeeklyWeather";
+import TodayWeather from "../../today'sWeather/TodayWeather";
+import style from "./main.module.css";
 const Main = (props) => {
     const { weeklyWeather, currentTimeZone, currentWeather } = props;
     return (
-        <div className="weather-detail-wrapper">
+        <div className={style.weather_detail_wrapper}>
             <NavBar />
             <WeeklyWeather
                 weeklyWeather={weeklyWeather}

@@ -1,10 +1,11 @@
-import WeeklyWeatherCard from "./WeeklyWeatherCard";
+import WeeklyWeatherCard from "../weeklyWeatherCard/WeeklyWeatherCard";
+import styles from "./weeklyWeather.module.css";
 const WeeklyWeather = (props) => {
     const { weeklyWeather, timeZone } = props;
     const formatWeeklyWeather = weeklyWeather.slice();
     formatWeeklyWeather.shift();
     return (
-        <div className="weekly-weather-wrapper">
+        <div className={styles.weekly_weather_wrapper}>
             {formatWeeklyWeather.map((weather, index) => (
                 <WeeklyWeatherCard
                     key={index}
