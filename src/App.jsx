@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Card from "./components/resuable/card/Card";
+import Sidebar from "./components/sidebar/sideBar/Sidebar";
+import Main from "./components/main/main/Main";
 let count = 1;
 function App() {
     const [weatherData, setWeatherData] = useState();
@@ -25,7 +27,21 @@ function App() {
     }, []);
 
     if (!isDataFetched) return <>Loading</>;
-    return <Card weatherData={weatherData} />;
+    return (
+        <>
+            <Card>
+                <Sidebar
+                    currentWeather={weatherData.current}
+                    currentTimezone={weatherData.timezone}
+                />
+                <Main
+                    weeklyWeather={weatherData.daily}
+                    currentTimezone={weatherData.timezone}
+                    currentWeather={weatherData.current}
+                />
+            </Card>
+        </>
+    );
 }
 
 export default App;

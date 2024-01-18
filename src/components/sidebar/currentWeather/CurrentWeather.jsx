@@ -1,9 +1,11 @@
 import { secToDateConverter } from "../../../utils/utilFunc";
-import CurrentWeatherIcon from "../../../utils/CurrentWeatherIcon";
+import CurrentWeatherIcon from "../../resuable/icon/CurrentWeatherIcon";
 import styles from "./currentWeather.module.css";
+
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
     console.log(currentWeather, currentTimezone);
+
     return (
         <div className={styles.current_weather_wrapper}>
             <div className={styles.current_weather_type_image}>
