@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import Card from "./components/resuable/card/Card";
 import Sidebar from "./components/sidebar/sideBar/Sidebar";
 import Main from "./components/main/main/Main";

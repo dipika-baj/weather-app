@@ -1,0 +1,10 @@
+.today_weather_wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 10px;
+    margin-top: 40px;
+}
+.classes {
+    background-color: #fff;
+}

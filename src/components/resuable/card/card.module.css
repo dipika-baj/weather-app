@@ -1,4 +1,4 @@
-.weather_app_wrapper {
+.weather_app_card {
     display: flex;
     border-radius: 60px;
     width: 80%;
@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .weather_app_wrapper {
+    .weather_app_card {
         flex-direction: column;
         border-radius: 0;
         width: 100%;

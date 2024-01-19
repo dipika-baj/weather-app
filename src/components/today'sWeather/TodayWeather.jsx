@@ -1,39 +1,41 @@
-import UVCard from "./UVCard";
-import WindStatusCard from "./WindStatusCard";
-import SunRiseSetCard from "./SunRiseSetCard";
-import HumidityCard from "./HumidityCard";
-import VisibilityCard from "./VisibilityCard";
-// import Pressure from "./Pressure";
-
+import UVCard from "./uvIndex/UVCard";
+import WindStatusCard from "./windStatus/WindStatusCard";
+import SunRiseSetCard from "./sunRiseSet/SunRiseSetCard";
+import HumidityCard from "./humidity/HumidityCard";
+import VisibilityCard from "./visibility/VisibilityCard";
+import Pressure from "./pressure/Pressure";
+import WeatherCard from "../resuable/weatherCard/weatherCard";
+import styles from "./todayWeather.module.css";
 const TodayWeather = (props) => {
-    const { currentWeather } = props;
+    const { currentWeather, timezone } = props;
     return (
         <>
             <h3 className="today-weather-title">Today's Weather</h3>
-            <UVCard uvIndex={currentWeather.uvi} />
-            <WindStatusCard windStatus={currentWeather.wind_speed} />
-            <SunRiseSetCard
-                sunRise={currentWeather.sunrise}
-                sunSet={currentWeather.sunset}
-            />
-            <HumidityCard humidity={currentWeather.humidity} />
-            <VisibilityCard visibilty={currentWeather.visibility} />
+            <div className={styles.today_weather_wrapper}>
+                <WeatherCard title="UV Index">
+                    <UVCard uvIndex={currentWeather.uvi} />
+                </WeatherCard>
+                <WeatherCard title="Wind Status">
+                    <WindStatusCard windStatus={currentWeather.wind_speed} />
+                </WeatherCard>
+                <WeatherCard title="Sunrise & Sunset">
+                    <SunRiseSetCard
+                        sunRise={currentWeather.sunrise}
+                        sunSet={currentWeather.sunset}
+                        timezone={timezone}
+                    />
+                </WeatherCard>
+                <WeatherCard title="Humidity">
+                    <HumidityCard humidity={currentWeather.humidity} />
+                </WeatherCard>
+                <WeatherCard title="Visibility">
+                    <VisibilityCard visibility={currentWeather.visibility} />
+                </WeatherCard>
+                <WeatherCard title="Pressure">
+                    <Pressure pressure={currentWeather.pressure} />
+                </WeatherCard>
+            </div>
         </>
     );
 };
 export default TodayWeather;
-
-// clouds: 100
-// dew_point: -0.34
-// dt: 1705507145
-// feels_like: -1.31
-// humidity: 83
-// pressure: 990
-// sunrise: 1705478291
-// sunset: 1705508528
-// temp: 2.2
-// uvi: 0
-// visibility: 10000
-// weather :[{id: 804, main: 'Clouds', description: 'overcast clouds', icon: '04d'}]
-// wind_deg: 10
-// wind_speed: 3.6

@@ -1,0 +1,9 @@
+.weather_card {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.card_title {
+    color: #8b8b8b;
+    font-size: 12px;
+}

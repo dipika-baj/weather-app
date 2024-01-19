@@ -3,15 +3,18 @@ import WeeklyWeather from "../../weeklyWeather/weeklyWeather/WeeklyWeather";
 import TodayWeather from "../../today'sWeather/TodayWeather";
 import style from "./main.module.css";
 const Main = (props) => {
-    const { weeklyWeather, currentTimeZone, currentWeather } = props;
+    const { weeklyWeather, currentTimezone, currentWeather } = props;
     return (
         <div className={style.weather_detail_wrapper}>
             <NavBar />
             <WeeklyWeather
                 weeklyWeather={weeklyWeather}
-                timeZone={currentTimeZone}
+                timezone={currentTimezone}
             />
-            <TodayWeather currentWeather={currentWeather} />
+            <TodayWeather
+                currentWeather={currentWeather}
+                timezone={currentTimezone}
+            />
         </div>
     );
 };

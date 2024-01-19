@@ -18,7 +18,7 @@ const secToDateConverter = (timestamp = '', timeZone, option) => {
         return formattedDate;
     }
     else if (option == 'time') {
-        const options = { timeZone: timeZone, hour12: true, hour: '2-digit', minute: '2-digit' };
+        const options = { timeZone: timeZone, hour12: false, hour: '2-digit', minute: '2-digit' };
         const formattedTime = new Intl.DateTimeFormat('en-US', options).format(date);
         return formattedTime;
     }

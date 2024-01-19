@@ -4,7 +4,6 @@ import styles from "./currentWeather.module.css";
 
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
-    console.log(currentWeather, currentTimezone);
 
     return (
         <div className={styles.current_weather_wrapper}>

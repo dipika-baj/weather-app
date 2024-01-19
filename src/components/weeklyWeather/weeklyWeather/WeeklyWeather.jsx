@@ -1,7 +1,7 @@
 import WeeklyWeatherCard from "../weeklyWeatherCard/WeeklyWeatherCard";
 import styles from "./weeklyWeather.module.css";
 const WeeklyWeather = (props) => {
-    const { weeklyWeather, timeZone } = props;
+    const { weeklyWeather, timezone } = props;
     const formatWeeklyWeather = weeklyWeather.slice();
     formatWeeklyWeather.shift();
     return (
@@ -10,7 +10,7 @@ const WeeklyWeather = (props) => {
                 <WeeklyWeatherCard
                     key={index}
                     day={new Intl.DateTimeFormat("en-US", {
-                        timeZone: timeZone,
+                        timeZone: timezone,
                         weekday: "short",
                     }).format(weather.dt * 1000)}
                     maxTemp={weather.temp.max}
