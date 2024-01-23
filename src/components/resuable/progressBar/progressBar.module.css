@@ -1,0 +1,21 @@
+.progress_bar {
+    height: 60px;
+    width: min-content;
+    border: 1px solid #ddd2d2;
+    border-radius: 10px;
+    padding: 6px 4px;
+}
+.progress_indicator_wrapper {
+    position: relative;
+    width: 10px;
+    height: 100%;
+}
+
+.progress_indicator {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #64645f;
+    position: absolute;
+    transform: translateY(50%);
+}
