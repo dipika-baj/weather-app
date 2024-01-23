@@ -1,4 +1,4 @@
-import ProgressBar from "../../resuable/progressBar/progressBar";
+import ProgressBar from "../../resuable/progressBar/ProgressBar";
 import styles from "./humidity.module.css";
 const HumidityCard = (props) => {
     const { humidity } = props;
@@ -6,7 +6,7 @@ const HumidityCard = (props) => {
         <>
             <div className={styles.humidity}>
                 <p>{humidity}%</p>
-                <ProgressBar value={humidity} id={"humidity"} />
+                <ProgressBar value={humidity} />
             </div>
         </>
     );

@@ -6,7 +6,7 @@ const UVCard = (props) => {
     return (
         <div className={styles.uv_index}>
             <p>{Math.round(uvIndex)}</p>
-            <ProgressBar value={Math.round(uvIndex)} max={12} id={"uvIndex"} />
+            <ProgressBar value={Math.round(uvIndex)} max={12} />
         </div>
     );
 };
