@@ -1,0 +1,10 @@
+.sun_rise_set {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 12px 0;
+}
+
+.sun_rise_set p {
+    font-size: 15px;
+}

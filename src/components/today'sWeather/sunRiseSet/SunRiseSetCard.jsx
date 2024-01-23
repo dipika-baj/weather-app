@@ -5,7 +5,7 @@ const SunRiseSetCard = (props) => {
     const { sunRise, sunSet, timezone } = props;
     return (
         <>
-            <div className={styles.sun_rise}>
+            <div className={styles.sun_rise_set}>
                 <Sunrise />
                 <p>
                     {new Intl.DateTimeFormat("en-US", {
@@ -16,7 +16,7 @@ const SunRiseSetCard = (props) => {
                     }).format(sunRise * 1000)}
                 </p>
             </div>
-            <div className={styles.sun_set}>
+            <div className={styles.sun_rise_set}>
                 <Sunset />
                 <p>
                     {new Intl.DateTimeFormat("en-US", {
