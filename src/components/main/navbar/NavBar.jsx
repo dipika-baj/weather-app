@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./navbar.module.css";
+import { SquareUserRound } from "lucide-react";
 
 const NavBar = () => {
     const [activeForcast, setActiveForcast] = useState("today");
@@ -24,7 +25,8 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className={styles.user_profile}>
-                <img src="/user-profile.jpg" />
+                {/* <img src="/user-profile.jpg" /> */}
+                <SquareUserRound />
             </div>
         </nav>
     );
