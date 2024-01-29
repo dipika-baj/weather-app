@@ -4,8 +4,8 @@ import { Sunrise, Sunset } from "lucide-react";
 const SunRiseSetCard = (props) => {
     const { sunRise, sunSet, timezone } = props;
     return (
-        <>
-            <div className={styles.sun_rise_set}>
+        <div className={styles.sun_rise_set}>
+            <div className={styles.sun_rise}>
                 <Sunrise />
                 <p>
                     {new Intl.DateTimeFormat("en-US", {
@@ -16,7 +16,7 @@ const SunRiseSetCard = (props) => {
                     }).format(sunRise * 1000)}
                 </p>
             </div>
-            <div className={styles.sun_rise_set}>
+            <div className={styles.sun_set}>
                 <Sunset />
                 <p>
                     {new Intl.DateTimeFormat("en-US", {
@@ -27,7 +27,7 @@ const SunRiseSetCard = (props) => {
                     }).format(sunSet * 1000)}
                 </p>
             </div>
-        </>
+        </div>
     );
 };
 export default SunRiseSetCard;

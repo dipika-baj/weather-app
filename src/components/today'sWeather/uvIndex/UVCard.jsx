@@ -1,10 +1,9 @@
 import ProgressBar from "../../resuable/progressBar/ProgressBar";
-import styles from "./uvCard.module.css";
 
 const UVCard = (props) => {
     const { uvIndex } = props;
     return (
-        <div className={styles.uv_index}>
+        <div>
             <p>{Math.round(uvIndex)}</p>
             <ProgressBar value={Math.round(uvIndex)} max={12} />
         </div>

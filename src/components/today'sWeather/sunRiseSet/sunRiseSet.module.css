@@ -1,4 +1,9 @@
 .sun_rise_set {
+    flex-direction: column;
+    align-items: start !important;
+}
+.sun_rise,
+.sun_set {
     display: flex;
     align-items: center;
     gap: 10px;

@@ -2,10 +2,12 @@ const AirQualityCard = (props) => {
     const { pressure } = props;
     return (
         <>
-            <p>
-                {pressure}
-                <span>hPa</span>
-            </p>
+            <div>
+                <p>
+                    {pressure}
+                    <span>hPa</span>
+                </p>
+            </div>
         </>
     );
 };

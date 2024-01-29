@@ -1,9 +1,8 @@
-import styles from "./visibility.module.css";
 const VisibilityCard = (props) => {
     const { visibility } = props;
     return (
         <>
-            <div className={styles.visibility}>
+            <div>
                 <p>
                     {visibility / 1000}
                     <span>km</span>
