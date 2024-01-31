@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./navbar.module.css";
 import { SquareUserRound } from "lucide-react";
 
-const NavBar = () => {
+const NavBar = (props) => {
+    const { onActiveForcastChange } = props;
     const [activeForcast, setActiveForcast] = useState("week");
     const [activeUnit, setActiveUnit] = useState("c");
 
@@ -14,7 +15,10 @@ const NavBar = () => {
                         className={
                             activeForcast === "today" ? styles.active : ""
                         }
-                        onClick={() => setActiveForcast("today")}
+                        onClick={() => {
+                            setActiveForcast("today");
+                            onActiveForcastChange("today");
+                        }}
                     >
                         <span>Today</span>
                     </li>
@@ -22,7 +26,10 @@ const NavBar = () => {
                         className={
                             activeForcast === "week" ? styles.active : ""
                         }
-                        onClick={() => setActiveForcast("week")}
+                        onClick={() => {
+                            setActiveForcast("week");
+                            onActiveForcastChange("week");
+                        }}
                     >
                         <span>Week</span>
                     </li>

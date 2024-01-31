@@ -13,10 +13,12 @@ const WeeklyWeatherCard = (props) => {
                     {Math.round(maxTemp)}
                     <sup>&deg;</sup>
                 </span>
-                <span className={styles.weekday_min_temp}>
-                    {Math.round(minTemp)}
-                    <sup>&deg;</sup>
-                </span>
+                {minTemp && (
+                    <span className={styles.weekday_min_temp}>
+                        {Math.round(minTemp)}
+                        <sup>&deg;</sup>
+                    </span>
+                )}
             </div>
         </div>
     );

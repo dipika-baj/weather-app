@@ -24,7 +24,6 @@ function App() {
                 console.log("ERROR");
             });
     }, []);
-
     if (!isDataFetched) return <>Loading</>;
     return (
         <>
@@ -35,6 +34,7 @@ function App() {
                 />
                 <Main
                     weeklyWeather={weatherData.daily}
+                    hourlyWeather={weatherData.hourly}
                     currentTimezone={weatherData.timezone}
                     currentWeather={weatherData.current}
                 />

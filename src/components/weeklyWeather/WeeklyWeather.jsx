@@ -1,4 +1,4 @@
-import WeeklyWeatherCard from "../weeklyWeatherCard/WeeklyWeatherCard";
+import WeeklyWeatherCard from "../resuable/weeklyWeatherCard/WeeklyWeatherCard";
 import styles from "./weeklyWeather.module.css";
 const WeeklyWeather = (props) => {
     const { weeklyWeather, timezone } = props;
