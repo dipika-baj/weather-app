@@ -5,6 +5,14 @@
     gap: 20px;
     margin-top: 40px;
 }
-.classes {
-    background-color: #fff;
+
+@media screen and (max-width: 640px) {
+    .today_weather_wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 480px) {
+    .today_weather_wrapper {
+        grid-template-columns: 1fr;
+    }
 }

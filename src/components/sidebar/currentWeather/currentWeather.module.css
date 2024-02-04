@@ -3,8 +3,8 @@
     margin: 15px 0;
 }
 .current_weather_type_image svg {
-    height: 200px;
-    width: 200px;
+    height: 100%;
+    width: 100%;
 }
 
 .current_temperature {

@@ -17,3 +17,8 @@
         background-color: #f4f4f4;
     }
 }
+@media screen and (max-width: 1024px) {
+    .weather_app_card {
+        width: 90%;
+    }
+}
