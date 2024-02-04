@@ -5,7 +5,7 @@ const WeeklyWeather = (props) => {
     const formatWeeklyWeather = weeklyWeather.slice();
     formatWeeklyWeather.shift();
     return (
-        <div className={styles.weekly_weather_wrapper}>
+        <div className={`${styles.weekly_weather_wrapper} scroll`}>
             {formatWeeklyWeather.map((weather, index) => (
                 <WeeklyWeatherCard
                     key={index}

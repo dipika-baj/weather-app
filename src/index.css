@@ -5,6 +5,16 @@
     font-family: inter;
 }
 
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #64645f;
+}
+
+.scroll::-webkit-scrollbar {
+    height: 8px;
+    border-radius: 10px;
+    background-color: #fff;
+}
 /** @type {import('tailwindcss').Config} */
 /* module.exports = {
     theme: {
