@@ -12,31 +12,29 @@ const CurrentWeather = (props) => {
                     weather={currentWeather.weather[0].description}
                 />
             </div>
-            <p className={styles.current_temperature}>
-                {Math.round(currentWeather.temp)}
-                <span className={styles.degree}>
-                    <sup>&deg;C</sup>
-                </span>
-            </p>
-            <div className={styles.current_time_day}>
-                <span className={styles.current_day}>
-                    {secToDateConverter("", currentTimezone, "date")},
-                </span>
-                <span className={styles.current_time}>
-                    {secToDateConverter("", currentTimezone, "time")}
-                </span>
-            </div>
-            <div className={styles.weather_type_wrapper}>
-                <CurrentWeatherIcon
-                    weather={currentWeather.weather[0].description}
-                />
-                <div className={styles.weather_type}>
-                    {currentWeather.weather[0].description}
+            <div className={styles.current_weather_detail}>
+                <p className={styles.current_temperature}>
+                    {Math.round(currentWeather.temp)}
+                    <span className={styles.degree}>
+                        <sup>&deg;C</sup>
+                    </span>
+                </p>
+                <div className={styles.current_time_day}>
+                    <span className={styles.current_day}>
+                        {secToDateConverter("", currentTimezone, "date")},
+                    </span>
+                    <span className={styles.current_time}>
+                        {secToDateConverter("", currentTimezone, "time")}
+                    </span>
                 </div>
-            </div>
-            <div className={styles.current_location_wrapper}>
-                <img src="/location.jpg" />
-                <p className={styles.current_location}>{currentTimezone}</p>
+                <div className={styles.weather_type_wrapper}>
+                    <CurrentWeatherIcon
+                        weather={currentWeather.weather[0].description}
+                    />
+                    <div className={styles.weather_type}>
+                        {currentWeather.weather[0].description}
+                    </div>
+                </div>
             </div>
         </div>
     );

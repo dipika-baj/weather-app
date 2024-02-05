@@ -37,19 +37,17 @@
     text-transform: capitalize;
 }
 
-.current_location_wrapper {
-    position: relative;
+@media screen and (max-width: 768px) {
+    .current_weather_wrapper {
+        display: flex;
+    }
+    .current_weather_type_image svg {
+        width: 180px;
+    }
 }
 
-.current_location_wrapper img {
-    width: 100%;
-    border-radius: 12px;
-}
-.current_location {
-    font-size: 18px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
+@media screen and (max-width: 640px) {
+    .current_weather_type_image svg {
+        width: 120px;
+    }
 }
