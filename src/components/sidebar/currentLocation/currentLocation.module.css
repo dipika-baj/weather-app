@@ -1,5 +1,6 @@
 .current_location_wrapper {
-    position: relative;
+    display: grid;
+    place-items: center;
 }
 
 .current_location_wrapper img {
@@ -9,8 +10,11 @@
 .current_location {
     font-size: 18px;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: #ffffff;
+}
+
+@media screen and (max-width: 768px) {
+    .current_location_wrapper {
+        display: none;
+    }
 }

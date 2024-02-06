@@ -1,6 +1,7 @@
 .weekday_weather_wrapper {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     background-color: #ffffff;
     min-width: 125px;
     padding: 10px;

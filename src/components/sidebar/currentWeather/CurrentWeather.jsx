@@ -4,13 +4,10 @@ import styles from "./currentWeather.module.css";
 
 const CurrentWeather = (props) => {
     const { currentWeather, currentTimezone } = props;
-
     return (
         <div className={styles.current_weather_wrapper}>
             <div className={styles.current_weather_type_image}>
-                <CurrentWeatherIcon
-                    weather={currentWeather.weather[0].description}
-                />
+                <CurrentWeatherIcon weather={currentWeather.weather[0].main} />
             </div>
             <div className={styles.current_weather_detail}>
                 <p className={styles.current_temperature}>
@@ -19,22 +16,19 @@ const CurrentWeather = (props) => {
                         <sup>&deg;C</sup>
                     </span>
                 </p>
-                <div className={styles.current_time_day}>
-                    <span className={styles.current_day}>
-                        {secToDateConverter("", currentTimezone, "date")},
-                    </span>
-                    <span className={styles.current_time}>
+                <p className={styles.current_time_day}>
+                    {secToDateConverter("", currentTimezone, "date")},&nbsp;
+                    <span>
                         {secToDateConverter("", currentTimezone, "time")}
                     </span>
-                </div>
-                <div className={styles.weather_type_wrapper}>
+                </p>
+                <div className={styles.current_weather_type}>
                     <CurrentWeatherIcon
-                        weather={currentWeather.weather[0].description}
+                        weather={currentWeather.weather[0].main}
                     />
-                    <div className={styles.weather_type}>
-                        {currentWeather.weather[0].description}
-                    </div>
+                    <p>{currentWeather.weather[0].description}</p>
                 </div>
+                <p className={styles.location}>{currentTimezone}</p>
             </div>
         </div>
     );

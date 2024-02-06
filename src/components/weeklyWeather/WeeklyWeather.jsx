@@ -15,7 +15,7 @@ const WeeklyWeather = (props) => {
                     }).format(weather.dt * 1000)}
                     maxTemp={weather.temp.max}
                     minTemp={weather.temp.min}
-                    weatherType={weather.weather[0].description}
+                    weatherType={weather.weather[0].main}
                 />
             ))}
         </div>

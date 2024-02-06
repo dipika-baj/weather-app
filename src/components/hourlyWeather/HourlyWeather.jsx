@@ -16,7 +16,7 @@ const HourlyWeather = (props) => {
                         minute: "2-digit",
                     }).format(weather.dt * 1000)}
                     maxTemp={weather.temp}
-                    weatherType={weather.weather[0].description}
+                    weatherType={weather.weather[0].main}
                 />
             ))}
         </div>
