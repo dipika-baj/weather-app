@@ -1,7 +1,8 @@
 import WeeklyWeatherCard from "../resuable/weeklyWeatherCard/WeeklyWeatherCard";
+import { changeToFahrenheit } from "../../utils/utilFunc";
 import styles from "./weeklyWeather.module.css";
 const WeeklyWeather = (props) => {
-    const { weeklyWeather, timezone } = props;
+    const { weeklyWeather, timezone, unit } = props;
     const formatWeeklyWeather = weeklyWeather.slice();
     formatWeeklyWeather.shift();
     return (
@@ -13,8 +14,16 @@ const WeeklyWeather = (props) => {
                         timeZone: timezone,
                         weekday: "short",
                     }).format(weather.dt * 1000)}
-                    maxTemp={weather.temp.max}
-                    minTemp={weather.temp.min}
+                    maxTemp={
+                        unit === "f"
+                            ? changeToFahrenheit(weather.temp.max)
+                            : weather.temp.max
+                    }
+                    minTemp={
+                        unit === "f"
+                            ? changeToFahrenheit(weather.temp.min)
+                            : weather.temp.min
+                    }
                     weatherType={weather.weather[0].main}
                 />
             ))}

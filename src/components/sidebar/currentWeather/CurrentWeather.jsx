@@ -1,9 +1,10 @@
 import { secToDateConverter } from "../../../utils/utilFunc";
+import { changeToFahrenheit } from "../../../utils/utilFunc";
 import CurrentWeatherIcon from "../../resuable/icon/CurrentWeatherIcon";
 import styles from "./currentWeather.module.css";
 
 const CurrentWeather = (props) => {
-    const { currentWeather, currentTimezone } = props;
+    const { currentWeather, currentTimezone, unit } = props;
     return (
         <div className={styles.current_weather_wrapper}>
             <div className={styles.current_weather_type_image}>
@@ -11,9 +12,11 @@ const CurrentWeather = (props) => {
             </div>
             <div className={styles.current_weather_detail}>
                 <p className={styles.current_temperature}>
-                    {Math.round(currentWeather.temp)}
+                    {unit === "f"
+                        ? Math.round(changeToFahrenheit(currentWeather.temp))
+                        : Math.round(currentWeather.temp)}
                     <span className={styles.degree}>
-                        <sup>&deg;C</sup>
+                        <sup>&deg;{unit}</sup>
                     </span>
                 </p>
                 <p className={styles.current_time_day}>

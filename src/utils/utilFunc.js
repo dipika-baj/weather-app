@@ -24,7 +24,11 @@ const secToDateConverter = (timestamp = '', timeZone, option) => {
     }
 }
 
-export { delay, secToDateConverter };
+const changeToFahrenheit = (temp) => {
+    return ((temp * 9 / 5) + 32)
+}
+
+export { delay, secToDateConverter, changeToFahrenheit };
 
 
 

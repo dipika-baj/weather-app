@@ -1,9 +1,9 @@
 import styles from "./hourlyWeather.module.css";
 import WeeklyWeatherCard from "../resuable/weeklyWeatherCard/WeeklyWeatherCard";
+import { changeToFahrenheit } from "../../utils/utilFunc";
 const HourlyWeather = (props) => {
-    const { hourlyWeather, timezone } = props;
+    const { hourlyWeather, timezone, unit } = props;
     const formatHourlyWeather = hourlyWeather.slice(0, 24);
-    console.log(formatHourlyWeather);
     return (
         <div className={`${styles.hourly_weather_wrapper} scroll`}>
             {formatHourlyWeather.map((weather, index) => (
@@ -15,7 +15,11 @@ const HourlyWeather = (props) => {
                         hour: "2-digit",
                         minute: "2-digit",
                     }).format(weather.dt * 1000)}
-                    maxTemp={weather.temp}
+                    maxTemp={
+                        unit === "f"
+                            ? changeToFahrenheit(weather.temp)
+                            : weather.temp
+                    }
                     weatherType={weather.weather[0].main}
                 />
             ))}

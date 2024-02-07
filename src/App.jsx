@@ -6,6 +6,7 @@ let count = 1;
 function App() {
     const [weatherData, setWeatherData] = useState();
     const [isDataFetched, setIsDataFetch] = useState(false);
+    const [unit, setUnit] = useState("c");
 
     useEffect(() => {
         if (count > 1) return;
@@ -31,12 +32,15 @@ function App() {
                 <Sidebar
                     currentWeather={weatherData.current}
                     currentTimezone={weatherData.timezone}
+                    unit={unit}
                 />
                 <Main
                     weeklyWeather={weatherData.daily}
                     hourlyWeather={weatherData.hourly}
                     currentTimezone={weatherData.timezone}
                     currentWeather={weatherData.current}
+                    unit={unit}
+                    setUnit={setUnit}
                 />
             </Card>
         </>

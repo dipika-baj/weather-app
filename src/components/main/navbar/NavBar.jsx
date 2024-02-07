@@ -3,9 +3,7 @@ import styles from "./navbar.module.css";
 import { SquareUserRound } from "lucide-react";
 
 const NavBar = (props) => {
-    const { onActiveForcastChange } = props;
-    const [activeForcast, setActiveForcast] = useState("week");
-    const [activeUnit, setActiveUnit] = useState("c");
+    const { setActiveForcast, setUnit, activeForcast, unit } = props;
 
     return (
         <nav className={styles.nav_bar}>
@@ -17,7 +15,6 @@ const NavBar = (props) => {
                         }
                         onClick={() => {
                             setActiveForcast("today");
-                            onActiveForcastChange("today");
                         }}
                     >
                         <span>Today</span>
@@ -28,7 +25,6 @@ const NavBar = (props) => {
                         }
                         onClick={() => {
                             setActiveForcast("week");
-                            onActiveForcastChange("week");
                         }}
                     >
                         <span>Week</span>
@@ -36,14 +32,18 @@ const NavBar = (props) => {
                 </ul>
                 <ul className={styles.unit_selector}>
                     <li
-                        className={activeUnit === "c" ? styles.active : ""}
-                        onClick={() => setActiveUnit("c")}
+                        className={unit === "c" ? styles.active : ""}
+                        onClick={() => {
+                            setUnit("c");
+                        }}
                     >
                         <span>&deg;C</span>
                     </li>
                     <li
-                        className={activeUnit === "f" ? styles.active : ""}
-                        onClick={() => setActiveUnit("f")}
+                        className={unit === "f" ? styles.active : ""}
+                        onClick={() => {
+                            setUnit("f");
+                        }}
                     >
                         <span>&deg;F</span>
                     </li>

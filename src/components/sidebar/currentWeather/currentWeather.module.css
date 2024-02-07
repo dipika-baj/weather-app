@@ -21,6 +21,10 @@
     font-size: 40px;
 }
 
+.degree sup {
+    text-transform: uppercase;
+}
+
 .current_time_day {
     font-size: 20px;
 }
