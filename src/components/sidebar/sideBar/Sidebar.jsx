@@ -3,10 +3,10 @@ import CurrentWeather from "../currentWeather/CurrentWeather";
 import CurrentLocation from "../currentLocation/currentLocation";
 import styles from "./sidebar.module.css";
 const Sidebar = (props) => {
-    const { currentWeather, currentTimezone, unit } = props;
+    const { currentWeather, currentTimezone, unit, setCoordinates } = props;
     return (
         <div className={styles.sidebar}>
-            <SearchBar />
+            <SearchBar setCoordinates={setCoordinates} />
             <CurrentWeather
                 currentWeather={currentWeather}
                 currentTimezone={currentTimezone}

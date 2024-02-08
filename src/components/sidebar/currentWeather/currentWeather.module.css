@@ -42,6 +42,9 @@
     align-items: center;
     text-transform: capitalize;
 }
+.location {
+    display: none;
+}
 
 @media screen and (max-width: 768px) {
     .current_weather_wrapper {
@@ -63,11 +66,6 @@
     .current_weather_detail {
         gap: 5px;
     }
-    .location {
-        display: none;
-    }
-}
-@media screen and (max-width: 768px) {
     .location {
         display: block;
     }

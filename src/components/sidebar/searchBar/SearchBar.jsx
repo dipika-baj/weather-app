@@ -1,13 +1,77 @@
 import { Search } from "lucide-react";
 import styles from "./searchBar.module.css";
-const SearchBar = () => {
+import { useEffect, useState } from "react";
+const SearchBar = (props) => {
+    const { setCoordinates } = props;
+    const [search, setSearch] = useState("");
+    const [searchData, setSearchData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const changeSearch = (event) => {
+        setSearch(event.target.value);
+    };
+    useEffect(() => {
+        if (search) {
+            const api = `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${
+                import.meta.env.VITE_APP_ID
+            }`;
+            setIsLoading(true);
+            fetch(api)
+                .then((response) => response.json())
+                .then((data) => {
+                    setSearchData(data);
+                })
+                .catch((err) => {
+                    console.log("Error:", err);
+                })
+                .finally(() => setIsLoading(false));
+        } else {
+            setSearchData([]);
+        }
+    }, [search]);
+
     return (
-        <div className={styles.search_bar_wrapper}>
-            <label htmlFor="search">
-                <Search />
-            </label>
-            <input type="text" id="search" placeholder="Search for places..." />
-        </div>
+        <>
+            <div className={styles.search_bar_wrapper}>
+                <label htmlFor="search">
+                    <Search />
+                </label>
+                <input
+                    type="text"
+                    id="search"
+                    placeholder="Search for places..."
+                    value={search}
+                    onChange={changeSearch}
+                />
+            </div>
+            {!!search && (
+                <ul className={styles.search_result}>
+                    <SearchResult
+                        searchData={searchData}
+                        isLoading={isLoading}
+                        setCoordinates={setCoordinates}
+                    />
+                </ul>
+            )}
+        </>
     );
 };
 export default SearchBar;
+
+const SearchResult = (props) => {
+    const { searchData, isLoading, setCoordinates } = props;
+    if (isLoading) {
+        return <li>Loading</li>;
+    }
+
+    if (searchData.length === 0) {
+        return <li>No city</li>;
+    }
+    return searchData.map((data, index) => (
+        <li
+            key={index}
+            onClick={() => setCoordinates({ lat: data.lat, lon: data.lon })}
+        >
+            {data.name} , {data.country}
+        </li>
+    ));
+};

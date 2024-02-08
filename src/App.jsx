@@ -2,16 +2,20 @@ import { useEffect, useState } from "react";
 import Card from "./components/resuable/card/Card";
 import Sidebar from "./components/sidebar/sideBar/Sidebar";
 import Main from "./components/main/main/Main";
-let count = 1;
+
 function App() {
     const [weatherData, setWeatherData] = useState();
     const [isDataFetched, setIsDataFetch] = useState(false);
     const [unit, setUnit] = useState("c");
+    const [coordinates, setCoordinates] = useState({
+        lat: 27.708317,
+        lon: 85.3205817,
+    });
 
     useEffect(() => {
-        if (count > 1) return;
-        count++;
-        const api = `https://openweathermap.org/data/2.5/onecall?lat=51.5085&lon=-0.1257&units=metric&appid=${
+        const api = `https://api.openweathermap.org/data/2.5/onecall?exclude=alerts,minutely&lat=${
+            coordinates.lat
+        }&lon=${coordinates.lon}&units=metric&appid=${
             import.meta.env.VITE_APP_ID
         }`;
 
@@ -24,8 +28,10 @@ function App() {
             .catch((err) => {
                 console.log("ERROR");
             });
-    }, []);
+    }, [coordinates]);
+
     if (!isDataFetched) return <>Loading</>;
+
     return (
         <>
             <Card>
@@ -33,6 +39,7 @@ function App() {
                     currentWeather={weatherData.current}
                     currentTimezone={weatherData.timezone}
                     unit={unit}
+                    setCoordinates={setCoordinates}
                 />
                 <Main
                     weeklyWeather={weatherData.daily}

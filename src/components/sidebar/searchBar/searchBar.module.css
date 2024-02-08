@@ -17,3 +17,19 @@
 .search_bar_wrapper input[type="text"]::placeholder {
     color: #000000;
 }
+
+.search_result {
+    list-style: none;
+    background-color: #efefef;
+    box-shadow: 0 0 10px #f4f4f4;
+    position: absolute;
+    min-width: 200px;
+}
+
+.search_result li {
+    padding: 10px;
+}
+.search_result li:hover {
+    cursor: pointer;
+    background-color: #f4f4f4;
+}
