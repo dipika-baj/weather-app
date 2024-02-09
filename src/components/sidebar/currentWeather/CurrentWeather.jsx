@@ -1,10 +1,15 @@
+import { useContext } from "react";
 import { secToDateConverter } from "../../../utils/utilFunc";
 import { changeToFahrenheit } from "../../../utils/utilFunc";
 import CurrentWeatherIcon from "../../resuable/icon/CurrentWeatherIcon";
 import styles from "./currentWeather.module.css";
+import { WeatherContext } from "../../../context/WeatherContextProvider";
 
 const CurrentWeather = (props) => {
-    const { currentWeather, currentTimezone, unit } = props;
+    const { weatherData } = useContext(WeatherContext);
+    const { unit } = props;
+    const currentWeather = weatherData.current;
+
     return (
         <div className={styles.current_weather_wrapper}>
             <div className={styles.current_weather_type_image}>
@@ -20,9 +25,10 @@ const CurrentWeather = (props) => {
                     </span>
                 </p>
                 <p className={styles.current_time_day}>
-                    {secToDateConverter("", currentTimezone, "date")},&nbsp;
+                    {secToDateConverter("", weatherData.timezone, "date")}
+                    ,&nbsp;
                     <span>
-                        {secToDateConverter("", currentTimezone, "time")}
+                        {secToDateConverter("", weatherData.timezone, "time")}
                     </span>
                 </p>
                 <div className={styles.current_weather_type}>
@@ -31,7 +37,7 @@ const CurrentWeather = (props) => {
                     />
                     <p>{currentWeather.weather[0].description}</p>
                 </div>
-                <p className={styles.location}>{currentTimezone}</p>
+                <p className={styles.location}>{weatherData.timezone}</p>
             </div>
         </div>
     );

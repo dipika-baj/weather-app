@@ -4,16 +4,11 @@ import HourlyWeather from "../../hourlyWeather/HourlyWeather";
 import TodayWeather from "../../today'sWeather/TodayWeather";
 import style from "./main.module.css";
 import { useState } from "react";
+
 const Main = (props) => {
-    const {
-        weeklyWeather,
-        hourlyWeather,
-        currentTimezone,
-        currentWeather,
-        unit,
-        setUnit,
-    } = props;
+    const { unit, setUnit } = props;
     const [activeForcast, setActiveForcast] = useState("week");
+
     return (
         <div className={style.weather_detail_wrapper}>
             <NavBar
@@ -23,23 +18,12 @@ const Main = (props) => {
                 unit={unit}
             />
             {activeForcast === "week" ? (
-                <WeeklyWeather
-                    weeklyWeather={weeklyWeather}
-                    timezone={currentTimezone}
-                    unit={unit}
-                />
+                <WeeklyWeather unit={unit} />
             ) : (
-                <HourlyWeather
-                    hourlyWeather={hourlyWeather}
-                    timezone={currentTimezone}
-                    unit={unit}
-                />
+                <HourlyWeather unit={unit} />
             )}
 
-            <TodayWeather
-                currentWeather={currentWeather}
-                timezone={currentTimezone}
-            />
+            <TodayWeather />
         </div>
     );
 };

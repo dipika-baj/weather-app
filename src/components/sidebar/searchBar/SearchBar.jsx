@@ -1,14 +1,18 @@
 import { Search } from "lucide-react";
 import styles from "./searchBar.module.css";
-import { useEffect, useState } from "react";
-const SearchBar = (props) => {
-    const { setCoordinates } = props;
+import { useContext, useEffect, useState } from "react";
+import { WeatherContext } from "../../../context/WeatherContextProvider";
+
+const SearchBar = () => {
     const [search, setSearch] = useState("");
     const [searchData, setSearchData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const { setCoordinates } = useContext(WeatherContext);
+
     const changeSearch = (event) => {
         setSearch(event.target.value);
     };
+
     useEffect(() => {
         if (search) {
             const api = `https://api.openweathermap.org/geo/1.0/direct?q=${search}&limit=5&appid=${

@@ -1,18 +1,16 @@
 import SearchBar from "../searchBar/SearchBar";
 import CurrentWeather from "../currentWeather/CurrentWeather";
-import CurrentLocation from "../currentLocation/currentLocation";
+import CurrentLocation from "../currentLocation/CurrentLocation";
 import styles from "./sidebar.module.css";
+
 const Sidebar = (props) => {
-    const { currentWeather, currentTimezone, unit, setCoordinates } = props;
+    const { unit } = props;
+
     return (
         <div className={styles.sidebar}>
-            <SearchBar setCoordinates={setCoordinates} />
-            <CurrentWeather
-                currentWeather={currentWeather}
-                currentTimezone={currentTimezone}
-                unit={unit}
-            />
-            <CurrentLocation currentTimezone={currentTimezone} />
+            <SearchBar />
+            <CurrentWeather unit={unit} />
+            <CurrentLocation />
         </div>
     );
 };

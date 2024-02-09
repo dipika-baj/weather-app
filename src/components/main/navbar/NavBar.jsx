@@ -1,4 +1,3 @@
-import { useState } from "react";
 import styles from "./navbar.module.css";
 import { SquareUserRound } from "lucide-react";
 

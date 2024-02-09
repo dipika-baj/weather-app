@@ -1,17 +1,22 @@
 import WeeklyWeatherCard from "../resuable/weeklyWeatherCard/WeeklyWeatherCard";
 import { changeToFahrenheit } from "../../utils/utilFunc";
 import styles from "./weeklyWeather.module.css";
+import { useContext } from "react";
+import { WeatherContext } from "../../context/WeatherContextProvider";
+
 const WeeklyWeather = (props) => {
-    const { weeklyWeather, timezone, unit } = props;
-    const formatWeeklyWeather = weeklyWeather.slice();
+    const { weatherData } = useContext(WeatherContext);
+    const { unit } = props;
+    const formatWeeklyWeather = weatherData.daily.slice();
     formatWeeklyWeather.shift();
+
     return (
         <div className={`${styles.weekly_weather_wrapper} scroll`}>
             {formatWeeklyWeather.map((weather, index) => (
                 <WeeklyWeatherCard
                     key={index}
                     day={new Intl.DateTimeFormat("en-US", {
-                        timeZone: timezone,
+                        timeZone: weatherData.timezone,
                         weekday: "short",
                     }).format(weather.dt * 1000)}
                     maxTemp={

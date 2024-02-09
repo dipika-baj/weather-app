@@ -6,8 +6,13 @@ import VisibilityCard from "./visibility/VisibilityCard";
 import Pressure from "./pressure/Pressure";
 import WeatherCard from "../resuable/weatherCard/weatherCard";
 import styles from "./todayWeather.module.css";
-const TodayWeather = (props) => {
-    const { currentWeather, timezone } = props;
+import { useContext } from "react";
+import { WeatherContext } from "../../context/WeatherContextProvider";
+
+const TodayWeather = () => {
+    const { weatherData } = useContext(WeatherContext);
+    const { current: currentWeather, timezone } = weatherData;
+
     return (
         <>
             <h3 className="today-weather-title">Today's Weather</h3>
