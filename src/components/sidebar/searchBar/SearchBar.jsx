@@ -22,12 +22,13 @@ const SearchBar = () => {
     useEffect(() => {
         let trimmedSearch = search.trim();
         if (trimmedSearch) {
+            const abortController = new AbortController();
             const timer = setTimeout(() => {
                 const api = `https://api.openweathermap.org/geo/1.0/direct?q=${trimmedSearch}&limit=5&appid=${
                     import.meta.env.VITE_APP_ID
                 }`;
                 if (!searchData) setIsLoading(true);
-                fetch(api)
+                fetch(api, { signal: abortController.signal })
                     .then((response) => response.json())
                     .then((data) => {
                         setSearchData(data);
@@ -37,7 +38,10 @@ const SearchBar = () => {
                     })
                     .finally(() => setIsLoading(false));
             }, 500);
-            return () => clearTimeout(timer);
+            return () => {
+                clearTimeout(timer);
+                abortController.abort();
+            };
         } else {
             setSearchData();
         }
