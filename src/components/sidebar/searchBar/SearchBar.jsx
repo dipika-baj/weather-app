@@ -10,8 +10,6 @@ const SearchBar = () => {
     const [showSearchResult, setShowSearchResult] = useState(false);
     const { setCoordinates } = useContext(WeatherContext);
 
-    console.log(search, searchData, isLoading);
-
     const changeSearch = (event) => {
         setSearch(event.target.value);
         event.target.value
