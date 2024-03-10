@@ -17,12 +17,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 20
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
 
       - name: Build project
+        env:
+          VITE_APP_ID: ${{ vars.VITE_APP_ID }}
         run: npm run build
 
       - name: Upload production-ready build files
